@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atof.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcoetzer <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rcoetzer <rcoetzer@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/20 14:20:02 by rcoetzer          #+#    #+#             */
-/*   Updated: 2019/07/03 14:59:16 by rcoetzer         ###   ########.fr       */
+/*   Updated: 2019/07/15 08:11:41 by rcoetzer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static double	ft_sfrac(char *str)
+static float	ft_sfrac(char *str)
 {
-	double		num;
+	float		num;
 	int			i;
 
 	i = 0;
@@ -26,10 +26,10 @@ static double	ft_sfrac(char *str)
 	return (num);
 }
 
-double			ft_atof(char *str)
+float			ft_atof(char *str)
 {
 	char		**sl;
-	double		num;
+	float		num;
 
 	sl = NULL;
 	num = 0.0;

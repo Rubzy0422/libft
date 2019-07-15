@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcoetzer <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rcoetzer <rcoetzer@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 17:55:02 by rcoetzer          #+#    #+#             */
-/*   Updated: 2019/07/12 15:09:56 by rcoetzer         ###   ########.fr       */
+/*   Updated: 2019/07/15 08:21:34 by rcoetzer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ t_list				*ft_lststrsplit(t_list *nlst, char const *s, char c);
 unsigned int		ft_wordc(char *str);
 unsigned int		ft_lstcount(t_list *lst);
 void				ft_del(void *lst, size_t n);
-double				ft_atof(char *str);
+float				ft_atof(char *str);
 void				ft_freearr(char **s);
 void				ft_swap(void *a, void *b);
 char				*ft_strjoin_free();
