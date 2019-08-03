@@ -6,12 +6,12 @@
 #    By: rcoetzer <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/29 07:34:13 by rcoetzer          #+#    #+#              #
-#    Updated: 2019/08/03 18:10:54 by rcoetzer         ###   ########.fr        #
+#    Updated: 2019/08/03 18:13:20 by rcoetzer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-FLAGS = -g -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra
 CC= gcc
 SRC = ft_memset.c\
 	ft_bzero.c\
@@ -126,7 +126,6 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 	@printf "${bldylw}[COMPILED]${bldpur}%40s${txtrst}\n" "$(NAME)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@printf "${bldgrn}%s${txtwht}%40s${txtrst}\n" "[Compiling] " "$<"	
 	@$(CC) $(FLAGS) -c $^ -o $@ $(INC)
 
 directory: $(OBJ_DIR)
