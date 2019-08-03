@@ -6,7 +6,7 @@
 /*   By: rcoetzer <rcoetzer@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 17:55:02 by rcoetzer          #+#    #+#             */
-/*   Updated: 2019/07/15 08:21:34 by rcoetzer         ###   ########.fr       */
+/*   Updated: 2019/08/03 18:11:28 by rcoetzer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define BUFF_SIZE 1024
 # define MAX_FD 1024
 
-int					ft_get_next_line(const int fd, char **line);
+int					get_next_line(const int fd, char **line);
 int					ft_read_line(int fd, char **line, char **sstr, int ret);
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -98,7 +98,7 @@ unsigned int		ft_lstcount(t_list *lst);
 void				ft_del(void *lst, size_t n);
 float				ft_atof(char *str);
 void				ft_freearr(char **s);
-void				ft_swap(void *a, void *b);
+void				ft_swap(void *a, void *b, size_t s);
 char				*ft_strjoin_free();
 char				*ft_strjoin_free(char *s1, char *s2, int free1, int free2);
 double				ft_hyperbole(double x, double exp, double div);

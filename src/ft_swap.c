@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcoetzer <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rcoetzer <rcoetzer@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/24 11:37:27 by rcoetzer          #+#    #+#             */
-/*   Updated: 2019/06/24 11:41:05 by rcoetzer         ###   ########.fr       */
+/*   Created: 2019/08/03 17:20:19 by rcoetzer          #+#    #+#             */
+/*   Updated: 2019/08/03 18:00:54 by rcoetzer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-void	ft_swap(void *a, void *b)
+void	ft_swap(void *a, void *b, size_t s)
 {
-	unsigned char	tmp;
+	char *tmp_a;
 
-	tmp = *(unsigned char *)a;
-	*(unsigned char *)a = *(unsigned char *)b;
-	*(unsigned char *)b = tmp;
+	tmp_a = ft_memalloc(s);
+	ft_memmove(tmp_a, a, s);
+	ft_memmove(a, b, s);
+	ft_memmove(b, tmp_a, s);
+	free(tmp_a);
 }

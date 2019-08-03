@@ -6,7 +6,7 @@
 #    By: rcoetzer <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/29 07:34:13 by rcoetzer          #+#    #+#              #
-#    Updated: 2019/07/12 15:10:20 by rcoetzer         ###   ########.fr        #
+#    Updated: 2019/08/03 18:10:54 by rcoetzer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,16 +76,16 @@ SRC = ft_memset.c\
 	ft_lstprint.c\
 	ft_wordc.c\
 	ft_lstcount.c\
-	ft_get_next_line.c\
+	get_next_line.c\
 	ft_del.c\
 	ft_atof.c\
 	ft_freearr.c\
-	ft_swap.c\
 	ft_strjoin_free.c\
 	ft_hyperbole.c\
-	ft_realloc.c
+	ft_realloc.c\
+	ft_swap.c
 
-INC = -I ./inc
+INC = -I ./includes
 SRC_DIR = src
 OBJ_DIR = obj
 OBJ			= $(SRC:.c=.o)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_next_line.c                                 :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcoetzer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 10:11:24 by rcoetzer          #+#    #+#             */
-/*   Updated: 2019/06/25 14:28:31 by rcoetzer         ###   ########.fr       */
+/*   Updated: 2019/08/03 18:10:21 by rcoetzer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ int				ft_read_line(int fd, char **line, char **sstr, int ret)
 	else if (sstr[fd][i] == '\0')
 	{
 		if (ret == BUFF_SIZE)
-			return (ft_get_next_line(fd, line));
+			return (get_next_line(fd, line));
 		*line = ft_strdup(sstr[fd]);
 		ft_strdel(&sstr[fd]);
 	}
 	return (1);
 }
 
-int				ft_get_next_line(const int fd, char **line)
+int				get_next_line(const int fd, char **line)
 {
 	static char	*sstr[MAX_FD];
 	char		*tmp;
