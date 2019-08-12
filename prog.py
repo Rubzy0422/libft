@@ -10,11 +10,11 @@ def main():
   args = parser.parse_args()
 
   nchars = int(math.log(args.nsteps, 10)) + 1
-  fmt_str = '\x1b[6;30;32m' +"[{:6.2f}%]".replace("X", str(nchars)) + '\x1b[0m'
+  fmt_str = "[{:Xd}/{:Xd}]({:6.2f}%)".replace("X", str(nchars))
   progress = 100 * args.stepno / args.nsteps
   sys.stdout.write(fmt_str.format(args.stepno, args.nsteps, progress))
   for item in args.remainder:
-    sys.stdout.write("\t")
+    sys.stdout.write(" ")
     sys.stdout.write(item)
   sys.stdout.write("\n")
 
