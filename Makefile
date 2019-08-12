@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rcoetzer <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: rcoetzer <rcoetzer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/29 07:34:13 by rcoetzer          #+#    #+#              #
-#    Updated: 2019/08/03 18:13:20 by rcoetzer         ###   ########.fr        #
+#    Updated: 2019/08/12 18:36:58 by rcoetzer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME =libft.a
 FLAGS = -Wall -Werror -Wextra
 CC= gcc
 SRC = ft_memset.c\
@@ -92,38 +92,11 @@ OBJ			= $(SRC:.c=.o)
 SRCS		=	$(addprefix $(SRC_DIR)/, $(SRC))
 OBJS		=	$(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
-txtblk=\e[0;30m
-txtred=\e[0;31m # Red
-txtgrn=\e[0;32m # Green
-txtylw=\e[0;33m # Yellow
-txtblu=\e[0;34m # Blue
-txtpur=\e[0;35m # Purple
-txtcyn=\e[0;36m # Cyan
-txtwht=\e[0;37m # White
-bldblk=\e[1;30m # Black - Bold
-bldred=\e[1;31m # Red
-bldgrn=\e[1;32m # Green
-bldylw=\e[1;33m # Yellow
-bldblu=\e[1;34m # Blue
-bldpur=\e[1;35m # Purple
-bldcyn=\e[1;36m # Cyan
-bakblk=\e[40m
-bakred=\e[41m   # Red
-bakgrn=\e[42m   # Green
-bakylw=\e[43m   # Yellow
-bakblu=\e[44m   # Blue
-bakpur=\e[45m   # Purple
-bakcyn=\e[46m   # Cyan
-bakwht=\e[47m   # White
-txtrst=\e[0m
-
-
 all: directory $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJS)
 	@ar -rc $(NAME) $(OBJS)
-	@ranlib $(NAME)
-	@printf "${bldylw}[COMPILED]${bldpur}%40s${txtrst}\n" "$(NAME)"
+	@printf "\e[33m[COMPILED] \e[32m%41s\e[39m\n" "$(NAME)"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@$(CC) $(FLAGS) -c $^ -o $@ $(INC)
@@ -131,10 +104,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 directory: $(OBJ_DIR)
 
 $(OBJ_DIR):
-	@printf "${bldgrn}%40s${bldpur}%s${bldgrn}%s\n${txtrst}" "[Compiling" "$(NAME)!" "]"
+	@printf "\e[33m[COMPILING] \e[32;1m%40s\n\e[39m"  "$(NAME)"
 	@mkdir -p $(OBJ_DIR)
 
 clean:
+	@printf "\e[31m %30s \e[39m\n" "[CLEANING]" 
 	@rm -rf $(OBJ)
 	@rm -rf $(OBJ_DIR)
 
