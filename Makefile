@@ -6,9 +6,26 @@
 #    By: rcoetzer <rcoetzer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/29 07:34:13 by rcoetzer          #+#    #+#              #
-#    Updated: 2019/08/12 18:36:58 by rcoetzer         ###   ########.fr        #
+#    Updated: 2019/08/12 19:51:08 by rcoetzer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+_mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))
+I := $(patsubst %/,%,$(dir $(_mkfile_path)))
+
+ifneq ($(words $(MAKECMDGOALS)),1)
+.DEFAULT_GOAL = all
+%:
+	@$(MAKE) $@ --no-print-directory -rRf $(firstword $(MAKEFILE_LIST))
+else
+ifndef ECHO
+T := $(shell $(MAKE) $(MAKECMDGOALS) --no-print-directory \
+      -nrRf $(firstword $(MAKEFILE_LIST)) \
+      ECHO="COUNTTHIS" | grep -c "COUNTTHIS")
+N := x
+C = $(words $N)$(eval N := x $N)
+ECHO = python $(I)/prog.py --stepno=$C --nsteps=$T
+endif
 
 NAME =libft.a
 FLAGS = -Wall -Werror -Wextra
@@ -100,6 +117,7 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@$(CC) $(FLAGS) -c $^ -o $@ $(INC)
+	@$(ECHO) $@
 
 directory: $(OBJ_DIR)
 
@@ -118,3 +136,5 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean all re fclean directory
+
+endif
