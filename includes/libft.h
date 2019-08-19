@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcoetzer <rcoetzer@42.fr>                  +#+  +:+       +#+        */
+/*   By: rcoetzer <rcoetzer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 17:55:02 by rcoetzer          #+#    #+#             */
-/*   Updated: 2019/08/03 18:11:28 by rcoetzer         ###   ########.fr       */
+/*   Updated: 2019/08/18 13:14:18 by rcoetzer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,5 @@ char				*ft_strjoin_free();
 char				*ft_strjoin_free(char *s1, char *s2, int free1, int free2);
 double				ft_hyperbole(double x, double exp, double div);
 void				*ft_realloc(void *ptr, size_t len);
+int					ft_instr(char *str, char c);
 #endif
