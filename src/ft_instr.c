@@ -5,16 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcoetzer <rcoetzer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/18 13:11:25 by rcoetzer          #+#    #+#             */
-/*   Updated: 2019/08/18 13:13:30 by rcoetzer         ###   ########.fr       */
+/*   Created: 2019/08/19 12:18:40 by rcoetzer          #+#    #+#             */
+/*   Updated: 2019/08/19 12:19:24 by rcoetzer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_instr(char *str, char c)
+int	ft_instr(char *str, char c)
 {
-	int i = 0;
+	int i;
+
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] == c)
